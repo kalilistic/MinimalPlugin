@@ -5,7 +5,7 @@
 			<Authors>kalilistic</Authors>
 			<TargetFramework>net5.0-windows</TargetFramework>
 			<Platforms>x64</Platforms>
-			<LangVersion>9</LangVersion>
+			<LangVersion>10</LangVersion>
 			<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 			<Nullable>enable</Nullable>
 			<Deterministic>true</Deterministic>
