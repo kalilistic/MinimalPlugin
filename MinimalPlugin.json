@@ -1,0 +1,12 @@
+{
+  "Author": "kalilistic",
+  "Name": "Minimal Plugin",
+  "Punchline": "What it says on the tin.",
+  "Description": "What it says on the tin.",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "sample",
+    "plugin",
+    "llamas"
+  ]
+}

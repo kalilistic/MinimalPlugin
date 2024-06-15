@@ -1,8 +1,8 @@
 using System.Diagnostics.CodeAnalysis;
 using Dalamud.Interface.Colors;
 using Dalamud.IoC;
-using Dalamud.Logging;
 using Dalamud.Plugin;
+using Dalamud.Plugin.Services;
 using ImGuiNET;
 
 namespace MinimalPlugin;
@@ -16,14 +16,17 @@ public class Plugin: IDalamudPlugin
     /// </summary>
     public Plugin()
     {
-        PluginLog.Log("Plugin started.");
+        PluginLog.Info("Plugin started.");
         PluginInterface.UiBuilder.Draw += UiBuilderOnDraw;
     }
 
     [PluginService]
     private static DalamudPluginInterface PluginInterface { get; set; } = null!;
+    
+    [PluginService]
+    private static IPluginLog PluginLog { get; set; } = null!;
 
-    private void UiBuilderOnDraw()
+    private static void UiBuilderOnDraw()
     {
         ImGui.PushStyleColor(ImGuiCol.WindowBg, ImGuiColors.ParsedBlue);
         ImGui.Begin("Window");
@@ -37,7 +40,4 @@ public class Plugin: IDalamudPlugin
     {
         PluginInterface.UiBuilder.Draw -= UiBuilderOnDraw;
     }
-
-    /// <inheritdoc />
-    public string Name => "MinimalPlugin";
 }
